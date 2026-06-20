@@ -1,0 +1,3 @@
+[submodule "extern/Donut"]
+	path = extern/Donut
+	url = https://github.com/NVIDIA-RTX/Donut.git
