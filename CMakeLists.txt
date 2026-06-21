@@ -28,3 +28,9 @@ donut_compile_shaders_all_platforms(
 )
 
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_shaders)
+
+# Copy runtime assets (textures) next to the executable so they resolve at runtime.
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/textures
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/textures)

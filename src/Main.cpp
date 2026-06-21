@@ -1,6 +1,6 @@
 #include <donut/app/ApplicationBase.h>
 
-#include "app.h"
+#include "App.h"
 
 using namespace donut;
 
@@ -18,6 +18,7 @@ int main(int __argc, const char** __argv)
     app::DeviceManager* deviceManager = app::DeviceManager::Create(api);
 
     app::DeviceCreationParameters deviceParams;
+    deviceParams.depthBufferFormat = nvrhi::Format::D24S8;   // make Donut attach a depth buffer to the swap chain
 #ifdef _DEBUG
     deviceParams.enableDebugRuntime = true;
     deviceParams.enableNvrhiValidationLayer = true;
