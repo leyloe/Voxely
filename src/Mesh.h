@@ -11,7 +11,7 @@ class Mesh {
 public:
     Mesh() = default;
     Mesh(nvrhi::BufferHandle vb, nvrhi::BufferHandle ib, uint32_t indexCount,
-         nvrhi::Format ibFormat = nvrhi::Format::R32_UINT);   // default arg HERE
+         nvrhi::Format ibFormat = nvrhi::Format::R32_UINT);
 
     void BindTo(nvrhi::GraphicsState& state) const;
 

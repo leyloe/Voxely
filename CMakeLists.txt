@@ -15,7 +15,7 @@ add_subdirectory(extern/Donut)
 
 target_link_libraries(${PROJECT_NAME} donut_app)
 
-target_include_directories(${PROJECT_NAME} PRIVATE src)
+target_include_directories(${PROJECT_NAME} PRIVATE src extern)
 
 include(extern/Donut/compileshaders.cmake)
 

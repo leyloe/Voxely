@@ -3,8 +3,8 @@
 
 #include <donut/app/ApplicationBase.h>
 #include <donut/app/DeviceManager.h>
-#include "Mesh.h"
 #include "Camera.h"
+#include "Chunk.h"
 #include "Texture.h"
 #include "Pipeline.h"
 
@@ -15,10 +15,10 @@ class App : public app::IRenderPass {
         nvrhi::CommandListHandle m_CommandList;
         std::string m_WindowTitle;
 
-        Pipeline                   m_Pipeline;
-        Texture                    m_DirtTexture;
-        Mesh                       m_CubeMesh;
-        Camera                     m_Camera;
+        Pipeline m_Pipeline;
+        Texture m_DirtTexture;
+        Camera m_Camera;
+        Chunk m_Chunk{ dm::float3(0.f, 0.f, 0.f) };
 
 
 

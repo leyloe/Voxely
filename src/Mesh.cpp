@@ -18,7 +18,7 @@ Mesh Mesh::CreateMesh(nvrhi::IDevice* device, nvrhi::ICommandList* cmd,
         .setInitialState(nvrhi::ResourceStates::VertexBuffer).setKeepInitialState(true).setDebugName("VB"));
     auto ib = device->createBuffer(nvrhi::BufferDesc().setByteSize(idxBytes).setIsIndexBuffer(true)
         .setInitialState(nvrhi::ResourceStates::IndexBuffer).setKeepInitialState(true).setDebugName("IB"));
-    cmd->writeBuffer(vb, vtx, vtxBytes);   // must be between cmd->open()/close()
+    cmd->writeBuffer(vb, vtx, vtxBytes);
     cmd->writeBuffer(ib, idx, idxBytes);
     return {vb, ib, indexCount, nvrhi::Format::R32_UINT};
 }
